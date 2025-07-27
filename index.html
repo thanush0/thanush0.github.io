@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thanushpriyan | AI & Data Science Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
   <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -21,20 +19,17 @@
       padding: 50px 20px;
       text-align: center;
     }
-    header img {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
-    border: 5px solid #38bdf8;
-    box-shadow: 0 0 15px #38bdf8, 0 0 30px rgba(56, 189, 248, 0.4);
-    margin-bottom: 15px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    #profileImg {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      box-shadow: 0 0 15px #38bdf8, 0 0 30px rgba(56, 189, 248, 0.4);
+      margin-bottom: 15px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
-    header img:hover {
-    transform: scale(1.05);
-    }
-
+    #profileImg:hover { transform: scale(1.05); }
     header h1 {
       font-size: 2.5em;
       margin: 10px 0 5px;
@@ -44,7 +39,6 @@
       font-size: 1.2em;
       opacity: 0.8;
     }
-
     nav {
       background-color: #1e293b;
       display: flex;
@@ -61,10 +55,7 @@
       font-weight: 500;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: #38bdf8;
-    }
-
+    nav a:hover { color: #38bdf8; }
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -76,21 +67,13 @@
       padding-left: 15px;
       margin-bottom: 20px;
     }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    .projects a, .github a {
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 10px; }
+    .projects a {
       color: #38bdf8;
       text-decoration: none;
     }
-    .projects a:hover, .github a:hover {
-      text-decoration: underline;
-    }
-
+    .projects a:hover { text-decoration: underline; }
     .button {
       background-color: #38bdf8;
       color: #0f172a;
@@ -100,12 +83,15 @@
       font-weight: bold;
       transition: transform 0.2s;
       display: inline-block;
-      margin-top: 15px;
+      cursor: pointer;
     }
-    .button:hover {
-      transform: scale(1.05);
+    .button:hover { transform: scale(1.05); }
+    #editToggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 999;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -114,22 +100,17 @@
       margin-top: 30px;
       color: #94a3b8;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-    }
   </style>
 </head>
 <body>
 
+<button id="editToggle" class="button">🖊 Edit</button>
+<input type="file" id="imgInput" style="display: none;" accept="image/*">
+
 <header>
-  <img src="image1.png" alt="Profile Photo" />
-  <h1>Thanushpriyan</h1>
-  <p>Final Year B.Tech – Artificial Intelligence & Data Science</p>
+  <img id="profileImg" src="image1.png" alt="Profile Photo" />
+  <h1 id="name" contenteditable="false">Thanushpriyan</h1>
+  <p id="tagline" contenteditable="false">Final Year B.Tech – Artificial Intelligence & Data Science</p>
 </header>
 
 <nav>
@@ -142,12 +123,12 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a passionate B.Tech student specializing in AI & Data Science. I build smart solutions using Python, Machine Learning, and embedded systems. My interests lie in real-time applications like safety devices, computer vision, and UI development using Streamlit.</p>
+  <p contenteditable="false">I am a passionate B.Tech student specializing in AI & Data Science. I build smart solutions using Python, Machine Learning, and embedded systems. My interests lie in real-time applications like safety devices, computer vision, and UI development using Streamlit.</p>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <ul>
+  <ul contenteditable="false">
     <li>Python, Numpy, Pandas, Scikit-learn</li>
     <li>Machine Learning & Data Visualization</li>
     <li>ESP32 & IoT Integration</li>
@@ -159,17 +140,17 @@
 
 <section id="projects" class="projects">
   <h2>Projects</h2>
-  <ul>
+  <ul contenteditable="false">
     <li><strong><a href="https://github.com/thanush0/womens-safety-watch.git" target="_blank">Women's Safety Watch</a></strong> – Sensor + GPS + GSM real-time alert system</li>
-    <li><strong><a href="https://github.com/thanush0/face-recognition-attendance.git">Face Recognition Attendance System</a></strong> – Live attendance using OpenCV and Streamlit UI</li>
-    <li><strong><a hreef="https://github.com/thanush0/wifi-password-cracker-sim.git">WiFi Password Cracker Simulation</a></strong> – WPA cracking simulation using Aircrack-ng & Streamlit</li>
+    <li><strong><a href="https://github.com/thanush0/face-recognition-attendance.git" target="_blank">Face Recognition Attendance System</a></strong> – Live attendance using OpenCV and Streamlit UI</li>
+    <li><strong><a href="https://github.com/thanush0/wifi-password-cracker-sim.git" target="_blank">WiFi Password Cracker Simulation</a></strong> – WPA cracking simulation using Aircrack-ng & Streamlit</li>
     <li><strong><a href="https://github.com/thanush0/MyFlix.git" target="_blank">MyFlix - Local Netflix Clone</a></strong> – Local video hosting with Streamlit UI</li>
   </ul>
 </section>
 
 <section id="certifications">
   <h2>Certifications & Achievements</h2>
-  <ul>
+  <ul contenteditable="false">
     <li>Google Data Analytics Certificate – Coursera</li>
     <li>ESP32 Hardware Project Showcase – CARE College Fest</li>
     <li>Streamlit Hackathon 2nd Place Winner</li>
@@ -178,15 +159,94 @@
 
 <section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:thanushpriyan@example.com">thanushpriyan@example.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/thanushpriyan" target="_blank">linkedin.com/in/thanushpriyan</a></p>
-  <p>GitHub: <a href="https://github.com/thanush0" target="_blank">github.com/thanush0</a></p>
+  <p contenteditable="false">Email: <a href="mailto:thanushpriyan502@gmail.com">thanushpriyan502@gmail.com</a></p>
+  <p contenteditable="false">LinkedIn: <a href="https://www.linkedin.com/in/thanushpriyan" target="_blank">linkedin.com/in/thanushpriyan</a></p>
+  <p contenteditable="false">GitHub: <a href="https://github.com/thanush0" target="_blank">github.com/thanush0</a></p>
   <a class="button" href="Thanushpriyan_Resume.pdf" download>📄 Download Resume</a>
 </section>
 
 <footer>
-  &copy; 2025 Thanushpriyan. Built with Laptop in Trichy.
+  &copy; 2025 Thanushpriyan. Built with 💻 in Trichy.
 </footer>
+
+<script>
+  const editBtn = document.getElementById('editToggle');
+  const contentBlocks = document.querySelectorAll('[contenteditable]');
+  const profileImg = document.getElementById('profileImg');
+  const imgInput = document.getElementById('imgInput');
+  const encryptionKey = "thanushKey";
+  const plainPassword = "#thanush2208";
+
+  let editing = false;
+  let isAuthenticated = false;
+
+  // Load saved content and image on load
+  window.addEventListener('DOMContentLoaded', () => {
+    contentBlocks.forEach((el, i) => {
+      const saved = localStorage.getItem(`block-${i}`);
+      if (saved) el.innerHTML = saved;
+    });
+    const savedImg = localStorage.getItem("profileImg");
+    if (savedImg) profileImg.src = savedImg;
+  });
+
+  // Store encrypted password once
+  if (!localStorage.getItem("encryptedPwd")) {
+    const encrypted = CryptoJS.AES.encrypt(plainPassword, encryptionKey).toString();
+    localStorage.setItem("encryptedPwd", encrypted);
+  }
+
+  // Auto-unlock if stored
+  const stored = localStorage.getItem("authUnlock");
+  if (stored === "true") isAuthenticated = true;
+
+  editBtn.addEventListener('click', () => {
+    if (!isAuthenticated) {
+      const input = prompt("Enter password to enable editing:");
+      const decrypted = CryptoJS.AES.decrypt(localStorage.getItem("encryptedPwd"), encryptionKey).toString(CryptoJS.enc.Utf8);
+      if (input === decrypted) {
+        isAuthenticated = true;
+        localStorage.setItem("authUnlock", "true");
+        toggleEditing();
+      } else {
+        alert("Incorrect password.");
+      }
+    } else {
+      toggleEditing();
+    }
+  });
+
+  function toggleEditing() {
+    editing = !editing;
+    contentBlocks.forEach(el => el.contentEditable = editing);
+    editBtn.textContent = editing ? "✅ Done" : "🖊 Edit";
+    profileImg.style.cursor = editing ? "pointer" : "default";
+    profileImg.title = editing ? "Click to change image" : "";
+
+    if (!editing) {
+      contentBlocks.forEach((el, i) => {
+        localStorage.setItem(`block-${i}`, el.innerHTML);
+      });
+    }
+  }
+
+  profileImg.addEventListener("click", () => {
+    if (editing) imgInput.click();
+  });
+
+  imgInput.addEventListener("change", () => {
+    const file = imgInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const dataURL = e.target.result;
+        profileImg.src = dataURL;
+        localStorage.setItem("profileImg", dataURL);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
 
 </body>
 </html>
