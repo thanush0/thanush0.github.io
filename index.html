@@ -234,7 +234,7 @@
   <p contenteditable="false">Email: <a href="mailto:thanushpriyan502@gmail.com">thanushpriyan502@gmail.com</a></p>
   <p contenteditable="false">LinkedIn: <a href="https://www.linkedin.com/in/thanushpriyan" target="_blank">linkedin.com/in/thanushpriyan</a></p>
   <p contenteditable="false">GitHub: <a href="https://github.com/thanush0" target="_blank">github.com/thanush0</a></p>
-  <a class="button" href="Thanushpriyan_Resume.pdf" download> Download Resume</a>
+  <a class="button" href="Thanushpriyan_Resume.pdf" download>📄 Download Resume</a>
 </section>
 
 <footer>
@@ -246,8 +246,9 @@
   const contentBlocks = document.querySelectorAll('[contenteditable]');
   const profileImg = document.getElementById('profileImg');
   const imgInput = document.getElementById('imgInput');
+
   const encryptionKey = "thanushKey";
-  const plainPassword = "#thanush2208";
+  const encryptedPwd = "U2FsdGVkX1+w3l9ALbLCibA5mr03XDEvnzTHNGKfgh8=";
 
   let editing = false;
   let isAuthenticated = false;
@@ -259,23 +260,27 @@
     });
     const savedImg = localStorage.getItem("profileImg");
     if (savedImg) profileImg.src = savedImg;
+
+    if (!localStorage.getItem("encryptedPwd")) {
+      localStorage.setItem("encryptedPwd", encryptedPwd);
+    }
+
+    if (sessionStorage.getItem("authUnlock") === "true") {
+      isAuthenticated = true;
+    }
   });
-
-  if (!localStorage.getItem("encryptedPwd")) {
-    const encrypted = CryptoJS.AES.encrypt(plainPassword, encryptionKey).toString();
-    localStorage.setItem("encryptedPwd", encrypted);
-  }
-
-  const stored = localStorage.getItem("authUnlock");
-  if (stored === "true") isAuthenticated = true;
 
   editBtn.addEventListener('click', () => {
     if (!isAuthenticated) {
       const input = prompt("Enter password to enable editing:");
-      const decrypted = CryptoJS.AES.decrypt(localStorage.getItem("encryptedPwd"), encryptionKey).toString(CryptoJS.enc.Utf8);
+      const decrypted = CryptoJS.AES.decrypt(
+        localStorage.getItem("encryptedPwd"),
+        encryptionKey
+      ).toString(CryptoJS.enc.Utf8);
+
       if (input === decrypted) {
         isAuthenticated = true;
-        localStorage.setItem("authUnlock", "true");
+        sessionStorage.setItem("authUnlock", "true"); // Session-only
         toggleEditing();
       } else {
         alert("Incorrect password.");
@@ -288,7 +293,7 @@
   function toggleEditing() {
     editing = !editing;
     contentBlocks.forEach(el => el.contentEditable = editing);
-    editBtn.textContent = editing ? " Done" : " Edit";
+    editBtn.textContent = editing ? "✅ Done" : "🖊 Edit";
     profileImg.style.cursor = editing ? "pointer" : "default";
     profileImg.title = editing ? "Click to change image" : "";
 
