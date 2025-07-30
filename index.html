@@ -2,43 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thanush Priyan R | Portfolio</title>
-  <meta name="description" content="Thanush Priyan R's portfolio – AI, Data Science, and IoT projects. Final year B.Tech in Artificial Intelligence & Data Science." />
-  <meta name="keywords" content="Thanush Priyan, Portfolio, AI, Data Science, ESP32, Streamlit, Projects, Resume" />
-  <meta name="author" content="Thanush Priyan R" />
-  <meta name="robots" content="index, follow" />
-  <meta name="googlebot" content="index, follow" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Thanush Priyan R | AI & Data Science Portfolio" />
-  <meta property="og:description" content="Explore Thanush's projects, skills, and certifications in AI, IoT, and Streamlit." />
-  <meta property="og:image" content="https://thanush0.github.io/image1.png" />
-  <meta property="og:url" content="https://thanush0.github.io/" />
-  <meta property="og:type" content="website" />
+  <!-- SEO Meta -->
+  <meta name="description" content="Thanush Priyan R's portfolio – AI, Data Science, and IoT projects. Final year B.Tech in Artificial Intelligence & Data Science.">
+  <meta name="keywords" content="Thanush Priyan, Portfolio, AI, Data Science, ESP32, Streamlit, Projects, Resume">
+  <meta name="author" content="Thanush Priyan R">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Thanush Priyan R | AI & Data Science Portfolio">
+  <meta property="og:description" content="Explore Thanush's projects, skills, and certifications in AI, IoT, and Streamlit.">
+  <meta property="og:image" content="https://thanush0.github.io/image1.png">
+  <meta property="og:url" content="https://thanush0.github.io/">
+  <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Thanush Priyan R | AI Portfolio" />
-  <meta name="twitter:description" content="Showcasing AI, IoT, and Embedded Projects by Thanush Priyan." />
-  <meta name="twitter:image" content="https://thanush0.github.io/image1.png" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thanush Priyan R | AI Portfolio">
+  <meta name="twitter:description" content="Showcasing AI, IoT, and Embedded Projects by Thanush Priyan.">
+  <meta name="twitter:image" content="https://thanush0.github.io/image1.png">
 
+  <!-- Icons and Fonts -->
   <link rel="icon" href="https://thanush0.github.io/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- Firebase & Crypto -->
   <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-database-compat.js"></script>
 
-  <style>/* [Your existing CSS remains unchanged] */</style>
+  <!-- Basic Styles -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 30px;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    nav {
+      text-align: center;
+      background: #333;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    ul {
+      list-style: disc inside;
+      padding-left: 20px;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- UI Buttons -->
+<!-- Edit Mode Controls -->
 <button id="editToggle" class="button">🖊 Edit</button>
 <input type="file" id="imgInput" style="display: none;" accept="image/*">
 
-<!-- Header Section -->
+<!-- Header -->
 <header>
   <img id="profileImg" src="image1.png" alt="Profile Photo" />
   <h1 id="name" contenteditable="false">Thanushpriyan</h1>
@@ -54,10 +124,10 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- Content Sections -->
+<!-- Sections -->
 <section id="about">
   <h2>About Me</h2>
-  <p contenteditable="false" data-key="about">I am a passionate B.Tech student...</p>
+  <p contenteditable="false" data-key="about">I am a passionate B.Tech student with a love for AI and embedded systems...</p>
 </section>
 
 <section id="skills">
@@ -69,11 +139,11 @@
   </ul>
 </section>
 
-<section id="projects" class="projects">
+<section id="projects">
   <h2>Projects</h2>
   <ul contenteditable="false" data-key="projects">
-    <li><a href="#">Women’s Safety Watch</a> – Real-time alert</li>
-    <li><a href="#">Face Recognition System</a> – Live Streamlit</li>
+    <li><a href="#">Women’s Safety Watch</a> – Real-time alert system using GPS</li>
+    <li><a href="#">Face Recognition System</a> – Live detection via Streamlit</li>
   </ul>
 </section>
 
@@ -96,7 +166,7 @@
   &copy; 2025 Thanushpriyan. Built with 💻 in Trichy.
 </footer>
 
-<!-- Firebase Logic -->
+<!-- Firebase Sync Logic -->
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyC8vqThCZElTg1F-yOI6pR3RVfi6l8ymNM",
@@ -117,7 +187,7 @@
   const imgInput = document.getElementById('imgInput');
 
   const encryptionKey = "thanushKey";
-  const encryptedPwd = "U2FsdGVkX1+w3l9ALbLCibA5mr03XDEvnzTHNGKfgh8=";
+  const encryptedPwd = "U2FsdGVkX1+w3l9ALbLCibA5mr03XDEvnzTHNGKfgh8="; // "admin123"
 
   let isEditing = false;
   let isAuthenticated = false;
@@ -126,13 +196,10 @@
     db.ref("siteData").once("value").then(snapshot => {
       const data = snapshot.val();
       if (!data) return;
-
-      profileImg.src = data.profileImg || profileImg.src;
+      if (data.profileImg) profileImg.src = data.profileImg;
       contentBlocks.forEach(block => {
         const key = block.dataset.key;
-        if (key && data[key]) {
-          block.innerHTML = data[key];
-        }
+        if (key && data[key]) block.innerHTML = data[key];
       });
     });
   }
@@ -141,9 +208,7 @@
     const updates = {};
     contentBlocks.forEach(block => {
       const key = block.dataset.key;
-      if (key) {
-        updates[key] = block.innerHTML;
-      }
+      if (key) updates[key] = block.innerHTML;
     });
     updates["profileImg"] = profileImg.src;
     db.ref("siteData").set(updates);
@@ -169,10 +234,7 @@
     contentBlocks.forEach(el => el.contentEditable = isEditing);
     profileImg.style.cursor = isEditing ? "pointer" : "default";
     editBtn.textContent = isEditing ? "✅ Done" : "🖊 Edit";
-
-    if (!isEditing) {
-      saveToFirebase();
-    }
+    if (!isEditing) saveToFirebase();
   }
 
   profileImg.addEventListener("click", () => {
