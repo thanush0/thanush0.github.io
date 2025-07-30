@@ -218,9 +218,7 @@
   const profileImg = document.getElementById('profileImg');
   const imgInput = document.getElementById('imgInput');
 
-  const encryptionKey = "thanushKey";
-  const encryptedPwd = "U2FsdGVkX1+w3l9ALbLCibA5mr03XDEvnzTHNGKfgh8=";
-
+  const correctMD5 = "5057769ec2b3061bba6f2d48f2a7900b";
   let isEditing = false;
   let isAuthenticated = false;
 
@@ -253,8 +251,8 @@
   editBtn.addEventListener('click', () => {
     if (!isAuthenticated) {
       const pwd = prompt("Enter password to edit:");
-      const decrypted = CryptoJS.AES.decrypt(encryptedPwd, encryptionKey).toString(CryptoJS.enc.Utf8);
-      if (pwd === decrypted) {
+      const hashed = CryptoJS.MD5(pwd).toString();
+      if (hashed === correctMD5) {
         isAuthenticated = true;
         toggleEdit();
       } else {
@@ -292,6 +290,7 @@
 
   window.addEventListener("DOMContentLoaded", loadFromFirebase);
 </script>
+
 
 </body>
 </html>
