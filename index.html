@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Thanush Priyan R | Portfolio</title>
+  <meta name="description" content="Thanush Priyan R's portfolio – AI, Data Science, and IoT projects." />
+  <meta name="keywords" content="Thanush Priyan, Portfolio, AI, Data Science, ESP32, Streamlit, Projects, Resume" />
+  <meta name="author" content="Thanush Priyan R" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Thanush Priyan R's portfolio – AI, Data Science, and IoT projects. Final year B.Tech in Artificial Intelligence & Data Science.">
-  <meta name="keywords" content="Thanush Priyan, Portfolio, AI, Data Science, ESP32, Streamlit, Projects, Resume">
-  <meta name="author" content="Thanush Priyan R">
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
+  <meta property="og:title" content="Thanush Priyan R | AI & Data Science Portfolio" />
+  <meta property="og:description" content="Explore Thanush's projects, skills, and certifications in AI, IoT, and Streamlit." />
+  <meta property="og:image" content="https://thanush0.github.io/image1.png" />
+  <meta property="og:url" content="https://thanush0.github.io/" />
+  <meta property="og:type" content="website" />
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Thanush Priyan R | AI & Data Science Portfolio">
-  <meta property="og:description" content="Explore Thanush's projects, skills, and certifications in AI, IoT, and Streamlit.">
-  <meta property="og:image" content="https://thanush0.github.io/image1.png">
-  <meta property="og:url" content="https://thanush0.github.io/">
-  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thanush Priyan R | AI Portfolio" />
+  <meta name="twitter:description" content="Showcasing AI, IoT, and Embedded Projects by Thanush Priyan." />
+  <meta name="twitter:image" content="https://thanush0.github.io/image1.png" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Thanush Priyan R | AI Portfolio">
-  <meta name="twitter:description" content="Showcasing AI, IoT, and Embedded Projects by Thanush Priyan.">
-  <meta name="twitter:image" content="https://thanush0.github.io/image1.png">
-
-  <!-- Icons and Fonts -->
   <link rel="icon" href="https://thanush0.github.io/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
@@ -34,88 +30,127 @@
   <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-database-compat.js"></script>
 
-  <!-- Basic Styles -->
   <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f2f2f2;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
     }
     header {
+      background: linear-gradient(120deg, #1e293b, #0f172a);
+      padding: 40px 20px;
       text-align: center;
-      padding: 30px;
     }
-    header img {
-      width: 150px;
-      height: 150px;
+    #profileImg {
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 0 10px #38bdf8, 0 0 20px rgba(56, 189, 248, 0.4);
+      margin-bottom: 15px;
       object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    #profileImg:hover { transform: scale(1.05); }
+    header h1 {
+      font-size: 2em;
+      margin: 10px 0 5px;
+      color: #38bdf8;
+    }
+    header p {
+      font-size: 1.1em;
+      opacity: 0.85;
     }
     nav {
-      text-align: center;
-      background: #333;
-      padding: 10px 0;
+      background-color: #1e293b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #e2e8f0;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 1rem;
     }
+    nav a:hover { color: #38bdf8; }
     section {
-      max-width: 800px;
+      padding: 40px 5vw;
+      max-width: 1000px;
       margin: auto;
-      padding: 20px;
-      background: white;
-      margin-top: 20px;
-      border-radius: 8px;
     }
-    h1, h2 {
-      text-align: center;
+    h2 {
+      color: #38bdf8;
+      border-left: 5px solid #38bdf8;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
     }
     ul {
-      list-style: disc inside;
       padding-left: 20px;
     }
-    .button {
-      display: inline-block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    ul li {
+      margin-bottom: 10px;
+    }
+    .projects a {
+      color: #38bdf8;
       text-decoration: none;
     }
-    .button:hover {
-      background: #0056b3;
+    .projects a:hover {
+      text-decoration: underline;
+    }
+    .button {
+      background-color: #38bdf8;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: transform 0.2s;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .button:hover { transform: scale(1.05); }
+    #editToggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 2001;
     }
     footer {
       text-align: center;
-      padding: 15px;
-      background: #eee;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #1e293b;
       margin-top: 30px;
-      font-size: 14px;
+      color: #94a3b8;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8em; }
+      header p { font-size: 1em; }
+      #profileImg { width: 120px; height: 120px; }
     }
   </style>
 </head>
 <body>
 
-<!-- Edit Mode Controls -->
 <button id="editToggle" class="button">🖊 Edit</button>
 <input type="file" id="imgInput" style="display: none;" accept="image/*">
 
-<!-- Header -->
 <header>
   <img id="profileImg" src="image1.png" alt="Profile Photo" />
-  <h1 id="name" contenteditable="false">Thanushpriyan</h1>
-  <p id="tagline" contenteditable="false">Final Year B.Tech – Artificial Intelligence & Data Science</p>
+  <h1 id="name" contenteditable="false" data-key="name">Thanushpriyan</h1>
+  <p id="tagline" contenteditable="false" data-key="tagline">Final Year B.Tech – Artificial Intelligence & Data Science</p>
 </header>
 
-<!-- Navigation -->
 <nav>
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
@@ -124,10 +159,9 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- Sections -->
 <section id="about">
   <h2>About Me</h2>
-  <p contenteditable="false" data-key="about">I am a passionate B.Tech student with a love for AI and embedded systems...</p>
+  <p contenteditable="false" data-key="about">I am a passionate B.Tech student specializing in AI & Data Science...</p>
 </section>
 
 <section id="skills">
@@ -139,11 +173,11 @@
   </ul>
 </section>
 
-<section id="projects">
+<section id="projects" class="projects">
   <h2>Projects</h2>
   <ul contenteditable="false" data-key="projects">
-    <li><a href="#">Women’s Safety Watch</a> – Real-time alert system using GPS</li>
-    <li><a href="#">Face Recognition System</a> – Live detection via Streamlit</li>
+    <li><a href="#">Women’s Safety Watch</a> – Real-time alert system</li>
+    <li><a href="#">Face Recognition System</a> – Attendance using Streamlit</li>
   </ul>
 </section>
 
@@ -166,7 +200,6 @@
   &copy; 2025 Thanushpriyan. Built with 💻 in Trichy.
 </footer>
 
-<!-- Firebase Sync Logic -->
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyC8vqThCZElTg1F-yOI6pR3RVfi6l8ymNM",
@@ -175,8 +208,7 @@
     projectId: "thanush-portfolio-ef00d",
     storageBucket: "thanush-portfolio-ef00d.appspot.com",
     messagingSenderId: "676207614664",
-    appId: "1:676207614664:web:b570a853a3d4d2b5d463fd",
-    measurementId: "G-J9L0KJ9DHM"
+    appId: "1:676207614664:web:b570a853a3d4d2b5d463fd"
   };
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
@@ -187,7 +219,7 @@
   const imgInput = document.getElementById('imgInput');
 
   const encryptionKey = "thanushKey";
-  const encryptedPwd = "U2FsdGVkX1+w3l9ALbLCibA5mr03XDEvnzTHNGKfgh8="; // "admin123"
+  const encryptedPwd = "U2FsdGVkX1+w3l9ALbLCibA5mr03XDEvnzTHNGKfgh8=";
 
   let isEditing = false;
   let isAuthenticated = false;
@@ -196,10 +228,12 @@
     db.ref("siteData").once("value").then(snapshot => {
       const data = snapshot.val();
       if (!data) return;
-      if (data.profileImg) profileImg.src = data.profileImg;
+      profileImg.src = data.profileImg || profileImg.src;
       contentBlocks.forEach(block => {
         const key = block.dataset.key;
-        if (key && data[key]) block.innerHTML = data[key];
+        if (key && data[key]) {
+          block.innerHTML = data[key];
+        }
       });
     });
   }
@@ -208,7 +242,9 @@
     const updates = {};
     contentBlocks.forEach(block => {
       const key = block.dataset.key;
-      if (key) updates[key] = block.innerHTML;
+      if (key) {
+        updates[key] = block.innerHTML;
+      }
     });
     updates["profileImg"] = profileImg.src;
     db.ref("siteData").set(updates);
@@ -234,7 +270,10 @@
     contentBlocks.forEach(el => el.contentEditable = isEditing);
     profileImg.style.cursor = isEditing ? "pointer" : "default";
     editBtn.textContent = isEditing ? "✅ Done" : "🖊 Edit";
-    if (!isEditing) saveToFirebase();
+
+    if (!isEditing) {
+      saveToFirebase();
+    }
   }
 
   profileImg.addEventListener("click", () => {
