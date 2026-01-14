@@ -1,25 +1,44 @@
-# Personal Portfolio - Editable with Password Protection
+# 👋 Hi, I'm Thanush Priyan
 
-This is a **responsive personal portfolio website** built with HTML, CSS, and JavaScript. It includes an **admin-only edit mode** protected by a password and allows real-time content editing directly in the browser, including profile image upload. All edits are saved to `localStorage` and persist until cleared.
+🎯 AI & Data Science Engineer | Python | Machine Learning | Computer Vision  
 
----
-
-##  Features
-
--  Clean and modern responsive UI
--  Toggle **Edit mode** (with password protection)
--  Auto-save changes to text blocks in `localStorage`
--  Click-to-upload **profile image**
--  Password-protected editing (AES encrypted)
--  Password remembered only during session (`sessionStorage`)
--  Mobile and desktop friendly
+I am an AI & Data Science engineer passionate about building real-world, data-driven, and intelligent systems. I enjoy transforming ideas into practical applications using machine learning, computer vision, and data analysis.
 
 ---
 
-##  Setup Instructions
+## 🧠 Technical Skills
+- **Languages:** Python, C, C++
+- **AI / ML:** Machine Learning, Deep Learning, Computer Vision
+- **Data:** Data Analysis, SQL, Visualization
+- **Frameworks & Tools:** Streamlit, OpenCV, Git, GitHub
+- **Hardware / IoT:** ESP32, Arduino, Sensors
 
-### 1. Clone or Download the Repository
+---
 
-```bash
-git clone https://github.com/yourusername/your-portfolio.git
-cd your-portfolio
+## 🚀 Featured Projects
+
+### 🔹 Face Recognition Attendance System
+- AI-based automated attendance using face recognition
+- Python, OpenCV, Machine Learning, Streamlit  
+🔗 https://github.com/thanush0/face-recognition-attendance
+
+### 🔹 Women’s Safety Watch – AI & IoT
+- Wearable safety system with real-time monitoring and alerts
+- ESP32, Python, Sensor Data Analysis  
+🔗 https://github.com/thanush0/womens-safety-watch
+
+### 🔹 IoT Sensor Data Monitoring & Visualization
+- Real-time sensor data dashboard with analytics
+- Python, Streamlit, Data Visualization  
+🔗 https://github.com/thanush0/iot-data-monitoring
+
+### 🔹 Wi-Fi Password Cracker Simulation
+- Educational simulation for WPA/WPA2 security analysis
+- Python, Streamlit  
+🔗 https://github.com/thanush0/wifi-password-cracker-simulation
+
+---
+
+## 📫 Connect With Me
+- LinkedIn: https://www.linkedin.com/in/thanushpriyan
+- GitHub: https://github.com/thanush0
